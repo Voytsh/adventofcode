@@ -33,7 +33,6 @@ def translate(x):
 def jazda():
     cc = 0
     total_score = 0
-    single_round_score = 0
     with open('/Users/filipwojcieszak/Documents/Adventofcode/D2/d2.txt', 'r') as f:
         for line in f:
             my_tuple = (line[0], translate(line[2]))
