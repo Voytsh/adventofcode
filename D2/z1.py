@@ -5,13 +5,13 @@ def shape_selected_points(x):
         'C': 3,
     }[x]
 
+
 def round_outcome_points(tuple):
     win = 6
     tie = 3
     lose = 0
 
     if tuple[0] == tuple[1]:
-        #print("It's a tie!")
         return tie
     elif tuple == ('A', 'B') or tuple == ('B', 'C') or tuple == ('C', 'A'):
         return win
@@ -21,14 +21,13 @@ def round_outcome_points(tuple):
         print("ERROR")
         exit(-1)
 
+
 def translate(x):
     return {
         'X': 'A',
         'Y': 'B',
         'Z': 'C',
     }[x]
-
-#def single_round_score(shape, outcome):
 
 
 def jazda():
@@ -45,8 +44,5 @@ def jazda():
         print(f" Your total score is {total_score}")
 
 
-
 if __name__ == '__main__':
     jazda()
-
-
