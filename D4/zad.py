@@ -9,8 +9,7 @@ def get_section_assignment():
 
 
 def get_answer(lista):
-    idxs_part1 = []
-    idxs_part2 = []
+    idxs_part1, idxs_part2 = [], []
     for index, item in enumerate(lista, start=1):
         first_elf = item[0]
         second_elf = item[1]
