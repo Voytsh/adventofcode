@@ -8,26 +8,9 @@ def get_section_assignment():
     return lista
 
 
-def get_pairs_that_fully_contain_other(lista):
-    idxs = []
-    for index, item in enumerate(lista, start=1):
-        first_elf = item[0]
-        second_elf = item[1]
-        first_elf = first_elf.split("-")
-        second_elf = second_elf.split("-")
-        first_elf_int = list(map(int, first_elf))
-        second_elf_int = list(map(int, second_elf))
-
-        if (first_elf_int[0] <= second_elf_int[0]) and (first_elf_int[1] >= second_elf_int[1]) or (
-                (first_elf_int[0] >= second_elf_int[0]) and (first_elf_int[1] <= second_elf_int[1])):
-            idxs.append(index)
-            print(index, first_elf, second_elf)
-
-    return idxs
-
-
-def get_pairs_that_overlap(lista):
-    idxs = []
+def get_answer(lista):
+    idxs_part1 = []
+    idxs_part2 = []
     for index, item in enumerate(lista, start=1):
         first_elf = item[0]
         second_elf = item[1]
@@ -38,14 +21,15 @@ def get_pairs_that_overlap(lista):
                 second_elf_int[0] <= first_elf_int[1] <= second_elf_int[1]) or (
                 first_elf_int[0] <= second_elf_int[0] <= first_elf_int[1]) or (
                 first_elf_int[0] <= second_elf_int[1] <= first_elf_int[1]):
-            idxs.append(index)
-            print(index, first_elf, second_elf)
+            idxs_part2.append(index)
 
-    return idxs
+        if (first_elf_int[0] <= second_elf_int[0]) and (first_elf_int[1] >= second_elf_int[1]) or (
+                (first_elf_int[0] >= second_elf_int[0]) and (first_elf_int[1] <= second_elf_int[1])):
+            idxs_part1.append(index)
+    return idxs_part1, idxs_part2
 
 
 if __name__ == '__main__':
     lista = get_section_assignment()
-    # x = get_pairs_that_fully_contain_other(lista)
-    x = get_pairs_that_overlap(lista)
-    print(f"Answer: {len(x)}")
+    part1_answer, part2_answer = get_answer(lista)
+    print(f"Answer: {len(part1_answer), len(part2_answer)}")
