@@ -11,10 +11,8 @@ def get_section_assignment():
 def get_answer(lista):
     idxs_part1, idxs_part2 = [], []
     for index, item in enumerate(lista, start=1):
-        first_elf = item[0]
-        second_elf = item[1]
-        first_elf_int = list(map(int, first_elf.split("-")))
-        second_elf_int = list(map(int, second_elf.split("-")))
+        first_elf_int = list(map(int, item[0].split("-")))
+        second_elf_int = list(map(int, item[1].split("-")))
 
         if (second_elf_int[0] <= first_elf_int[0] <= second_elf_int[1]) or (second_elf_int[0] <= first_elf_int[1] <= second_elf_int[1]) or (first_elf_int[0] <= second_elf_int[0] <= first_elf_int[1]) or (first_elf_int[0] <= second_elf_int[1] <= first_elf_int[1]):
             idxs_part2.append(index)
