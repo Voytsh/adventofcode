@@ -40,7 +40,7 @@ def move_stacks(procedure_list, init_stacks):
 
         items_to_move = (init_stacks[from_stack_number][(-1 * items_to_move_number):])
         init_stacks[from_stack_number] = init_stacks[from_stack_number][: (-1 * items_to_move_number)]
-        items_to_move.reverse()
+        #items_to_move.reverse() # uncomment to check the answer to part one
         for item in items_to_move:
             init_stacks[to_stack_number].append(item)
 
